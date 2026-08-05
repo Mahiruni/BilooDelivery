@@ -1,0 +1,20 @@
+name: biloo_driver_app
+description: Biloo Delivery driver fulfilment application.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  biloo_ui:
+    path: ../../packages/biloo_ui
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

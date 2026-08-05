@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#173590" />
+    <meta
+      name="description"
+      content="Biloo Delivery marketplace operations dashboard"
+    />
+    <title>Biloo Delivery Admin</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-mark">B</div>
+          <div>
+            <strong>BILOO</strong>
+            <span>Operations</span>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <button class="nav-item active" data-view="overview">
+            <span>◫</span> Overview
+          </button>
+          <button class="nav-item" data-view="orders">
+            <span>▤</span> Orders <em>18</em>
+          </button>
+          <button class="nav-item" data-view="vendors">
+            <span>▣</span> Vendors <em>6</em>
+          </button>
+          <button class="nav-item" data-view="drivers">
+            <span>➤</span> Drivers
+          </button>
+          <button class="nav-item" data-view="customers">
+            <span>◎</span> Customers
+          </button>
+          <button class="nav-item" data-view="payments">
+            <span>◇</span> Payments
+          </button>
+          <button class="nav-item" data-view="promotions">
+            <span>⌁</span> Promotions
+          </button>
+          <button class="nav-item" data-view="reports">
+            <span>↗</span> Reports
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="nav-item" data-view="settings"><span>⚙</span> Settings</button>
+          <div class="operator-card">
+            <div class="avatar">MA</div>
+            <div>
+              <strong>Mahir Aman</strong>
+              <span>Super administrator</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="icon-button mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+          <div>
+            <p class="eyebrow">Wednesday, 5 August</p>
+            <h1 id="pageTitle">Marketplace overview</h1>
+          </div>
+          <div class="topbar-actions">
+            <label class="search">
+              <span>⌕</span>
+              <input id="globalSearch" type="search" placeholder="Search orders, people or vendors" />
+            </label>
+            <button class="icon-button" aria-label="Notifications">♢<span class="dot"></span></button>
+            <button class="primary-button" id="exportButton">Export report</button>
+          </div>
+        </header>
+
+        <section class="view active" id="overview-view">
+          <div class="status-banner">
+            <div>
+              <span class="status-dot"></span>
+              <strong>All core services operational</strong>
+              <p>Orders, payments, dispatch and notifications are healthy.</p>
+            </div>
+            <button class="text-button">Open system status →</button>
+          </div>
+
+          <section class="metrics-grid" aria-label="Key marketplace metrics">
+            <article class="metric-card">
+              <div class="metric-icon blue">↗</div>
+              <div class="metric-copy"><span>Gross order value</span><strong>ETB 1.84M</strong></div>
+              <span class="trend positive">+12.8%</span>
+            </article>
+            <article class="metric-card">
+              <div class="metric-icon amber">▤</div>
+              <div class="metric-copy"><span>Orders today</span><strong>1,286</strong></div>
+              <span class="trend positive">+8.3%</span>
+            </article>
+            <article class="metric-card">
+              <div class="metric-icon green">➤</div>
+              <div class="metric-copy"><span>Drivers online</span><strong>342</strong></div>
+              <span class="trend neutral">78% active</span>
+            </article>
+            <article class="metric-card">
+              <div class="metric-icon violet">▣</div>
+              <div class="metric-copy"><span>Open vendors</span><strong>184</strong></div>
+              <span class="trend positive">+14 this week</span>
+            </article>
+          </section>
+
+          <section class="dashboard-grid">
+            <article class="panel chart-panel">
+              <div class="panel-header">
+                <div><p class="eyebrow">Marketplace volume</p><h2>Orders and revenue</h2></div>
+                <select aria-label="Chart period"><option>Last 7 days</option><option>Last 30 days</option></select>
+              </div>
+              <div class="chart-summary">
+                <div><span>Completed orders</span><strong>8,492</strong></div>
+                <div><span>Net revenue</span><strong>ETB 286,400</strong></div>
+              </div>
+              <div class="bar-chart" aria-label="Orders by day">
+                <div><span style="--value: 58%"></span><small>Thu</small></div>
+                <div><span style="--value: 72%"></span><small>Fri</small></div>
+                <div><span style="--value: 64%"></span><small>Sat</small></div>
+                <div><span style="--value: 81%"></span><small>Sun</small></div>
+                <div><span style="--value: 74%"></span><small>Mon</small></div>
+                <div><span style="--value: 91%"></span><small>Tue</small></div>
+                <div><span style="--value: 84%"></span><small>Wed</small></div>
+              </div>
+            </article>
+
+            <article class="panel dispatch-panel">
+              <div class="panel-header">
+                <div><p class="eyebrow">Live dispatch</p><h2>Addis Ababa</h2></div>
+                <span class="live-chip">● Live</span>
+              </div>
+              <div class="map-surface">
+                <span class="road road-one"></span>
+                <span class="road road-two"></span>
+                <span class="road road-three"></span>
+                <i class="map-pin pin-one">8</i>
+                <i class="map-pin pin-two">14</i>
+                <i class="map-pin pin-three">5</i>
+                <i class="driver-pin driver-one">➤</i>
+                <i class="driver-pin driver-two">➤</i>
+                <i class="driver-pin driver-three">➤</i>
+              </div>
+              <div class="dispatch-stats">
+                <div><span>Unassigned</span><strong>18</strong></div>
+                <div><span>At pickup</span><strong>47</strong></div>
+                <div><span>On route</span><strong>126</strong></div>
+              </div>
+            </article>
+          </section>
+
+          <section class="panel orders-panel">
+            <div class="panel-header">
+              <div><p class="eyebrow">Realtime activity</p><h2>Active orders</h2></div>
+              <div class="table-actions">
+                <button class="secondary-button">Filter</button>
+                <button class="text-button" data-view-jump="orders">View all orders →</button>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table id="ordersTable">
+                <thead>
+                  <tr><th>Order</th><th>Customer</th><th>Vendor</th><th>Driver</th><th>Total</th><th>Status</th><th></th></tr>
+                </thead>
+                <tbody>
+                  <tr data-search="BL-684201 Mahir Abyssinia Abel">
+                    <td><strong>BL-684201</strong><small>2 min ago</small></td><td>Mahir A.</td><td>Abyssinia Kitchen</td><td>Abel M.</td><td>ETB 775</td><td><span class="badge blue">On the way</span></td><td><button class="row-action">•••</button></td>
+                  </tr>
+                  <tr data-search="BL-684198 Hana Biloo Burger unassigned">
+                    <td><strong>BL-684198</strong><small>4 min ago</small></td><td>Hana T.</td><td>Biloo Burger Lab</td><td class="muted">Unassigned</td><td>ETB 540</td><td><span class="badge amber">Preparing</span></td><td><button class="row-action">•••</button></td>
+                  </tr>
+                  <tr data-search="BL-684192 Samuel Green Bowl Selam">
+                    <td><strong>BL-684192</strong><small>7 min ago</small></td><td>Samuel K.</td><td>Green Bowl</td><td>Selam D.</td><td>ETB 420</td><td><span class="badge green">Picked up</span></td><td><button class="row-action">•••</button></td>
+                  </tr>
+                  <tr data-search="BL-684186 Meron Pizza House Dawit">
+                    <td><strong>BL-684186</strong><small>9 min ago</small></td><td>Meron B.</td><td>Pizza House</td><td>Dawit F.</td><td>ETB 930</td><td><span class="badge violet">Confirmed</span></td><td><button class="row-action">•••</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="lower-grid">
+            <article class="panel approval-panel">
+              <div class="panel-header">
+                <div><p class="eyebrow">Onboarding</p><h2>Pending approvals</h2></div>
+                <span class="count-chip">6 vendors</span>
+              </div>
+              <div class="approval-item">
+                <div class="logo-tile amber-bg">K</div><div><strong>Kategna Restaurant</strong><span>Restaurant • Bole</span></div><button class="secondary-button approve">Review</button>
+              </div>
+              <div class="approval-item">
+                <div class="logo-tile blue-bg">C</div><div><strong>Checheho Bakery</strong><span>Bakery • Megenagna</span></div><button class="secondary-button approve">Review</button>
+              </div>
+              <div class="approval-item">
+                <div class="logo-tile green-bg">J</div><div><strong>Jemo Fresh Market</strong><span>Grocery • Jemo</span></div><button class="secondary-button approve">Review</button>
+              </div>
+            </article>
+
+            <article class="panel issues-panel">
+              <div class="panel-header">
+                <div><p class="eyebrow">Needs attention</p><h2>Operational exceptions</h2></div>
+                <span class="count-chip danger">9 open</span>
+              </div>
+              <div class="issue-item"><span class="issue-icon danger">!</span><div><strong>3 delayed deliveries</strong><p>More than 20 minutes beyond ETA</p></div><button class="row-action">→</button></div>
+              <div class="issue-item"><span class="issue-icon amber">↻</span><div><strong>4 payment reviews</strong><p>Provider callbacks require reconciliation</p></div><button class="row-action">→</button></div>
+              <div class="issue-item"><span class="issue-icon blue">?</span><div><strong>2 support escalations</strong><p>Awaiting marketplace operations</p></div><button class="row-action">→</button></div>
+            </article>
+          </section>
+        </section>
+
+        <section class="view" id="orders-view">
+          <div class="section-intro"><div><p class="eyebrow">Order operations</p><h2>All marketplace orders</h2></div><button class="primary-button">Create manual order</button></div>
+          <article class="panel placeholder-panel"><div class="placeholder-icon">▤</div><h3>Connected order workspace</h3><p>This module is prepared for live Supabase queries, status intervention, refunds, customer support notes and audit history.</p></article>
+        </section>
+        <section class="view" id="vendors-view"><article class="panel placeholder-panel"><div class="placeholder-icon">▣</div><h3>Vendor management</h3><p>Approval, commission, service-zone, menu quality and operating-hour controls will appear here.</p></article></section>
+        <section class="view" id="drivers-view"><article class="panel placeholder-panel"><div class="placeholder-icon">➤</div><h3>Driver operations</h3><p>Verification, availability, active routes, incidents, earnings and payout controls will appear here.</p></article></section>
+        <section class="view" id="customers-view"><article class="panel placeholder-panel"><div class="placeholder-icon">◎</div><h3>Customer support</h3><p>Customer profiles, addresses, order history, risk flags and support actions will appear here.</p></article></section>
+        <section class="view" id="payments-view"><article class="panel placeholder-panel"><div class="placeholder-icon">◇</div><h3>Payments and reconciliation</h3><p>Chapa, Telebirr, card and cash settlement records will be reconciled here.</p></article></section>
+        <section class="view" id="promotions-view"><article class="panel placeholder-panel"><div class="placeholder-icon">⌁</div><h3>Promotion engine</h3><p>Create vouchers, referral rewards, vendor-funded offers and eligibility rules.</p></article></section>
+        <section class="view" id="reports-view"><article class="panel placeholder-panel"><div class="placeholder-icon">↗</div><h3>Reports and analytics</h3><p>Marketplace, vendor, driver, payment and retention reports will be available here.</p></article></section>
+        <section class="view" id="settings-view"><article class="panel placeholder-panel"><div class="placeholder-icon">⚙</div><h3>Platform configuration</h3><p>Roles, fees, service zones, notification templates and integrations will be managed here.</p></article></section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

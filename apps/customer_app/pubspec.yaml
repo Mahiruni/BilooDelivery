@@ -1,0 +1,22 @@
+name: biloo_customer_app
+description: Biloo Delivery customer ordering application.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  biloo_domain:
+    path: ../../packages/biloo_domain
+  biloo_ui:
+    path: ../../packages/biloo_ui
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

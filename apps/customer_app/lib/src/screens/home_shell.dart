@@ -27,16 +27,18 @@ class HomeShell extends StatelessWidget {
       ProfileScreen(appState: appState),
     ];
 
+    final int selectedIndex = appState.selectedTab.clamp(0, screens.length - 1).toInt();
+
     return Scaffold(
       backgroundColor: const Color(0xFFFBFCFE),
-      body: IndexedStack(index: appState.selectedTab.clamp(0, screens.length - 1), children: screens),
+      body: IndexedStack(index: selectedIndex, children: screens),
       bottomNavigationBar: NavigationBar(
         height: 74,
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         indicatorColor: const Color(0xFFFFF0E0),
         elevation: 8,
-        selectedIndex: appState.selectedTab.clamp(0, 4),
+        selectedIndex: selectedIndex,
         onDestinationSelected: appState.setTab,
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
         destinations: <NavigationDestination>[

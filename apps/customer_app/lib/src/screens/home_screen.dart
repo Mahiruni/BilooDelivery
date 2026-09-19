@@ -56,6 +56,15 @@ class HomeScreen extends StatelessWidget {
     return CustomScrollView(
       slivers: <Widget>[
         SliverToBoxAdapter(child: _HomeHeader(appState: appState)),
+        const SliverPadding(
+          padding: EdgeInsets.fromLTRB(20, 18, 20, 0),
+          sliver: SliverToBoxAdapter(
+            child: Text(
+              'What are you looking for?',
+              style: TextStyle(color: BilooColors.ink, fontSize: 21, fontWeight: FontWeight.w900),
+            ),
+          ),
+        ),
         SliverPadding(
           padding: const EdgeInsets.fromLTRB(20, 18, 20, 0),
           sliver: SliverToBoxAdapter(
@@ -113,7 +122,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         SliverPadding(
-          padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+          padding: const EdgeInsets.fromLTRB(20, 14, 20, 0),
           sliver: SliverToBoxAdapter(child: _HeroBanner(appState: appState)),
         ),
         SliverPadding(
@@ -269,7 +278,7 @@ class _HomeHeader extends StatelessWidget {
           TextField(
             onChanged: appState.setSearchQuery,
             decoration: InputDecoration(
-              hintText: 'Search for food, groceries, products and more...',
+              hintText: 'Search food, groceries, products & more',
               hintStyle: const TextStyle(color: Color(0xFF6D7788), fontSize: 14),
               prefixIcon: const Icon(Icons.search_rounded, color: BilooColors.deepBlue),
               filled: true,

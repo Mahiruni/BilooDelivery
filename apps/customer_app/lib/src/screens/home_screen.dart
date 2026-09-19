@@ -60,40 +60,52 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 18, 20, 0),
           sliver: SliverToBoxAdapter(
             child: SizedBox(
-              height: 92,
+              height: 46,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemCount: _categories.length,
-                separatorBuilder: (_, __) => const SizedBox(width: 12),
+                separatorBuilder: (_, __) => const SizedBox(width: 9),
                 itemBuilder: (BuildContext context, int index) {
                   final _Category category = _categories[index];
                   final bool selected = index == 0;
-                  return Column(
-                    children: <Widget>[
-                      AnimatedContainer(
-                        duration: const Duration(milliseconds: 180),
-                        width: 66,
-                        height: 62,
-                        decoration: BoxDecoration(
-                          color: selected ? BilooColors.amber : const Color(0xFFF2F5FA),
-                          borderRadius: BorderRadius.circular(21),
-                        ),
-                        child: Icon(
+                  return AnimatedContainer(
+                    duration: const Duration(milliseconds: 180),
+                    padding: const EdgeInsets.symmetric(horizontal: 14),
+                    decoration: BoxDecoration(
+                      color: selected ? BilooColors.deepBlue : Colors.white,
+                      borderRadius: BorderRadius.circular(23),
+                      border: Border.all(
+                        color: selected ? BilooColors.deepBlue : const Color(0xFFE2E7EF),
+                      ),
+                      boxShadow: selected
+                          ? const <BoxShadow>[
+                              BoxShadow(
+                                color: Color(0x1A0B3B88),
+                                blurRadius: 12,
+                                offset: Offset(0, 4),
+                              ),
+                            ]
+                          : null,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Icon(
                           category.icon,
-                          size: 27,
-                          color: selected ? Colors.white : BilooColors.deepBlue,
+                          size: 18,
+                          color: selected ? BilooColors.amber : BilooColors.deepBlue,
                         ),
-                      ),
-                      const SizedBox(height: 7),
-                      Text(
-                        category.name,
-                        style: TextStyle(
-                          color: selected ? BilooColors.amber : BilooColors.ink,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700,
+                        const SizedBox(width: 7),
+                        Text(
+                          category.name,
+                          style: TextStyle(
+                            color: selected ? Colors.white : BilooColors.ink,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w800,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   );
                 },
               ),
